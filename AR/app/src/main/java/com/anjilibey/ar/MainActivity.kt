@@ -4,9 +4,12 @@ import android.graphics.Color
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.TextView
 import android.widget.Toast
 import com.google.ar.sceneform.AnchorNode
+import com.google.ar.sceneform.math.Vector3
 import com.google.ar.sceneform.rendering.ModelRenderable
+import com.google.ar.sceneform.rendering.ViewRenderable
 import com.google.ar.sceneform.ux.ArFragment
 import com.google.ar.sceneform.ux.TransformableNode
 import kotlinx.android.synthetic.main.activity_main.*
@@ -115,7 +118,28 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 bear.setParent(anchorNode)
                 bear.renderable = bearRenderable
                 bear.select()
+
+                addName(anchorNode, bear, "Bear")
             }
+    }
+
+    private fun addName(anchorNode: AnchorNode, node: TransformableNode, name: String) {
+            ViewRenderable.builder().setView(this, R.layout.name_layout)
+                .build()
+                .thenAccept{ viewRenderable ->
+                    val nameView = TransformableNode(arFragment.transformationSystem)
+                    nameView.localPosition = Vector3(0f,node.localPosition.y+0.5f,0f)
+                    nameView.setParent(anchorNode)
+                    nameView.renderable = viewRenderable
+                    nameView.select()
+
+                    //set time
+                    val txt_name = viewRenderable.view as TextView
+                    txt_name.text = name
+                    txt_name.setOnClickListener{
+                        anchorNode.setParent(null)
+                    }
+                }
     }
 
     private fun setupModel() {
