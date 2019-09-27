@@ -121,6 +121,94 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
                 addName(anchorNode, bear, "Bear")
             }
+            else if(selected == 2){
+                val cat = TransformableNode(arFragment.transformationSystem)
+                cat.setParent(anchorNode)
+                cat.renderable = catRenderable
+                cat.select()
+
+                addName(anchorNode, cat, "Cat")
+            }
+            else if(selected == 3){
+                val cow = TransformableNode(arFragment.transformationSystem)
+                cow.setParent(anchorNode)
+                cow.renderable = cowRenderable
+                cow.select()
+
+                addName(anchorNode, cow, "Cow")
+            }
+            else if(selected == 4){
+                val dog = TransformableNode(arFragment.transformationSystem)
+                dog.setParent(anchorNode)
+                dog.renderable = dogRenderable
+                dog.select()
+
+                addName(anchorNode, dog, "Dog")
+            }
+            else if(selected == 5){
+                val elephant = TransformableNode(arFragment.transformationSystem)
+                elephant.setParent(anchorNode)
+                elephant.renderable = elephantRenderable
+                elephant.select()
+
+                addName(anchorNode, elephant, "Elephant")
+            }
+            else if(selected == 6){
+                val ferret = TransformableNode(arFragment.transformationSystem)
+                ferret.setParent(anchorNode)
+                ferret.renderable = ferretRenderable
+                ferret.select()
+
+                addName(anchorNode, ferret, "Ferret")
+            }
+            else if(selected == 7){
+                val hippopotamus = TransformableNode(arFragment.transformationSystem)
+                hippopotamus.setParent(anchorNode)
+                hippopotamus.renderable = hippopotamusRenderable
+                hippopotamus.select()
+
+                addName(anchorNode, hippopotamus, "Hippopotamus")
+            }
+            else if(selected == 8){
+                val horse = TransformableNode(arFragment.transformationSystem)
+                horse.setParent(anchorNode)
+                horse.renderable = horseRenderable
+                horse.select()
+
+                addName(anchorNode, horse, "Horse")
+            }
+            else if(selected == 9){
+                val koala_bear = TransformableNode(arFragment.transformationSystem)
+                koala_bear.setParent(anchorNode)
+                koala_bear.renderable = koala_bearRenderable
+                koala_bear.select()
+
+                addName(anchorNode, koala_bear, "Koala Bear")
+            }
+            else if(selected == 10){
+                val lion = TransformableNode(arFragment.transformationSystem)
+                lion.setParent(anchorNode)
+                lion.renderable = lionRenderable
+                lion.select()
+
+                addName(anchorNode, lion, "Lion")
+            }
+            else if(selected == 11){
+                val reindeer = TransformableNode(arFragment.transformationSystem)
+                reindeer.setParent(anchorNode)
+                reindeer.renderable = reindeerRenderable
+                reindeer.select()
+
+                addName(anchorNode, reindeer, "Reindeer")
+            }
+            else if(selected == 12){
+                val wolverine = TransformableNode(arFragment.transformationSystem)
+                wolverine.setParent(anchorNode)
+                wolverine.renderable = wolverineRenderable
+                wolverine.select()
+
+                addName(anchorNode, wolverine, "Wolverine")
+            }
     }
 
     private fun addName(anchorNode: AnchorNode, node: TransformableNode, name: String) {
@@ -137,6 +225,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                     val txt_name = viewRenderable.view as TextView
                     txt_name.text = name
                     txt_name.setOnClickListener{
+                        //remove animal
                         anchorNode.setParent(null)
                     }
                 }
